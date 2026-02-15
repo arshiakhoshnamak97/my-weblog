@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- Categories -->
+    <div class="nav-scroller py-1 mb-4">
+        <nav class="nav d-flex justify-content-between">
+            {% for cat in categories %}
+                <a class="p-2 text-muted" href="#">{{ cat.name }}</a>
+            {% endfor %}
+        </nav>
+    </div>
+
+    <!-- Hero Featured Post -->
+    {% for post in featured_posts %}
+        {% if forloop.first %}
+        <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark"
+             style="background-image: url({{ post.featured_image.url }}); 
+                    background-blend-mode: overlay; 
+                    background-size: cover;">
+            <div class="col-md-8 px-0">
+                <h1 class="display-4 font-italic">{{ post.title }}</h1>
+                <p class="lead my-3">{{ post.short_description }}</p>
+                <p class="lead mb-0">
+                    <a href="#" class="text-white font-weight-bold">
+                        Continue reading...
+                    </a>
+                </p>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+
+    <!-- Featured Posts -->
+    <h3 class="text-uppercase text-warning mb-3" style="letter-spacing:2px;">
+        Category - {{ category }}
+    </h3>
+
+    <div class="row">
+        {% if posts %}
+        {% for post in posts %}
+           
+            <div class="col-md-6 mb-4">
+                <div class="card border-0">
+                    <div class="card-body">
+                        <h4>{{ post.title }}</h4>
+                        <small class="text-muted">
+                            {{ post.created_at|timesince }} ago | {{ post.author }}
+                        </small>
+                        <p class="card-text mt-2">
+                            {{ post.short_description }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% comment %} {% endif %} {% endcomment %}
+        {% endfor %}
+        {% else %}
+            <p>No posts found.</p>
+        {% endif %}
+    </div>
+{% endblock %}

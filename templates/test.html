@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Strategy Hub | به دنیای من خوش اومدی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;800&display=swap');
+        
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        /* پس‌زمینه زنده و شاداب */
+        .mesh-gradient {
+            background-color: #0f172a;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.3) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.3) 0px, transparent 50%),
+                radial-gradient(at 50% 0%, rgba(14, 165, 233, 0.3) 0px, transparent 50%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .dashboard-sidebar {
+            background: rgba(15, 23, 42, 0.8);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .hidden-section { display: none; }
+    </style>
+</head>
+<body class="mesh-gradient min-h-screen">
+
+    <nav class="fixed top-0 w-full z-50 p-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass-card px-8 py-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 btn-primary rounded-xl flex items-center justify-center shadow-lg">
+                    <i class="fas fa-chess-knight text-white text-xl"></i>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight">I am<span class="text-indigo-400">Arshia</span></span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 font-medium text-gray-300">
+                <a href="#" onclick="showSection('home')" class="hover:text-white transition">Home</a>
+                <a href="#" onclick="showSection('favorites')" class="hover:text-white transition">Favorite</a>
+                <a href="#" class="hover:text-white transition">All posts </a>
+            </div>
+
+            <div class="flex gap-3">
+                <button onclick="showModal('login')" class="px-5 py-2 text-sm font-bold hover:text-indigo-400 transition">Login</button>
+                <button onclick="showModal('signup')" class="btn-primary px-6 py-2 rounded-xl text-sm font-bold transition-transform active:scale-95">Register</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        
+        <section id="home-section">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-1">
+                    <div class="glass-card p-8 text-center sticky top-32">
+                        <div class="relative w-24 h-24 mx-auto mb-4">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Elon" class="rounded-3xl border-4 border-indigo-500/30" alt="Avatar">
+                            <div class="absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full border-4 border-[#0f172a]"></div>
+                        </div>
+                        <h2 class="text-2xl font-bold"> Arshia khoshnamak</h2>
+                        <p class="text-gray-400 text-sm mb-6"> I Love Game And Fun And Programming </p>
+                        <div class="flex justify-around border-t border-white/10 pt-6">
+                            <div><div class="font-bold">۱۲</div><div class="text-xs text-gray-500">Post</div></div>
+                            <div><div class="font-bold">۱.۲k</div><div class="text-xs text-gray-500">Follower</div></div>
+                            <div><div class="font-bold">۴۵</div><div class="text-xs text-gray-500">Game</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 space-y-8">
+                    <div class="glass-card p-6">
+                        <textarea class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-indigo-500 transition" placeholder="چه بازی استراتژیکی ذهنت رو درگیر کرده؟" rows="3"></textarea>
+                        <div class="flex justify-between mt-4">
+                            <div class="flex gap-4 text-gray-400">
+                                <button class="hover:text-white"><i class="far fa-image"></i></button>
+                                <button class="hover:text-white"><i class="fas fa-link"></i></button>
+                            </div>
+                            <button class="btn-primary px-8 py-2 rounded-xl font-bold text-sm"> Publish Post</button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1611996575749-79a3a250f948?auto=format&fit=crop&q=80" class="w-full h-64 object-cover" alt="Game">
+                        <div class="p-8">
+                            <div class="flex gap-2 mb-4">
+                                <span class="bg-indigo-500/20 text-indigo-300 text-xs px-3 py-1 rounded-full font-bold">Grand Strategy</span>
+                                <span class="bg-pink-500/20 text-pink-300 text-xs px-3 py-1 rounded-full font-bold">Review</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3">چرا Civilization VI هنوز پادشاه است؟</h3>
+                            <p class="text-gray-400 leading-relaxed mb-6">
+                                مدیریت منابع و دیپلماسی در این نسخه به اوج خودش رسیده. امروز یک استراتژی جدید برای فتح فرهنگی امتحان کردم که...
+                            </p>
+                            <div class="flex justify-between items-center text-gray-500">
+                                <div class="flex gap-6">
+                                    <button class="hover:text-pink-500 transition"><i class="far fa-heart ml-2"></i>۲۴۵</button>
+                                    <button class="hover:text-indigo-400 transition"><i class="far fa-comment ml-2"></i>۱۸</button>
+                                </div>
+                                <button class="text-gray-400 hover:text-white"><i class="far fa-bookmark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="auth-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm">
+        <div class="glass-card p-10 w-full max-w-md relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 btn-primary"></div>
+            <button onclick="closeModal()" class="absolute top-6 left-6 text-gray-400 hover:text-white"><i class="fas fa-times text-xl"></i></button>
+            
+            <div id="login-form">
+                <h2 class="text-3xl font-bold mb-2">Welcome Lord  !</h2>
+                <p class="text-gray-400 mb-8"> Login to your account.</p>
+                <div class="space-y-4">
+                    <input type="email" placeholder="ایمیل یا نام کاربری" class="w-full bg-white/5 border border-white/10 rounded-xl p-4 focus:outline-none focus:border-indigo-500">
+                    <input type="password" placeholder="رمز عبور" class="w-full bg-white/5 border border-white/10 rounded-xl p-4 focus:outline-none focus:border-indigo-500">
+                    <button class="w-full btn-primary py-4 rounded-xl font-bold mt-4 shadow-xl">ورود به سیستم</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showModal(type) {
+            document.getElementById('auth-modal').classList.remove('hidden');
+            // در دنیای واقعی اینجا فرم لاگین یا ثبت نام رو سوئیچ می‌کنیم
+        }
+
+        function closeModal() {
+            document.getElementById('auth-modal').classList.add('hidden');
+        }
+
+        function showSection(name) {
+            console.log("Switching to section: " + name);
+            // منطق سوییچ بین داشبورد و خانه
+        }
+
+        // انیمیشن ساده ورود کارت‌ها
+        window.onload = () => {
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.6s ease out';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        };
+    </script>
+</body>
+</html>
